@@ -18,10 +18,3 @@ dev_dependencies:
   flutter_lints: ^3.0.0
 
 flutter:
-  plugin:
-    platforms:
-      android:
-        package: dev.magradze.splasher
-        pluginClass: Splasher
-      ios:
-        pluginClass: Splasher
