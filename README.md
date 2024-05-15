@@ -1,3 +1,25 @@
+### Example:
+
+```dart
+Splasher(
+  logo: 'assets/animations/logo.json',
+  backgroundColor: Colors.white,
+  loadingText: 'Loading...',
+  durationInSeconds: 3,
+  navigator: HomeScreen(),
+)
+```
+
+### Screenshots:
+<img src="https://iili.io/J6GpHYX.gif" alt="drawing" width="200"/>
+
+### Related Links:
+
+*   [Splasher on pub.dev](https://pub.dev/packages/splasher)
+*  [Splasher on GitHub](https://github.com/magradze/splasher)
+*  [Lottie Files](https://lottiefiles.com/)
+
+
 ### Description:
 
 The **Splasher** widget allows you to customize various aspects of your splash screen:
