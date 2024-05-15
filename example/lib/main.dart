@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:splasher/splasher.dart';
 
@@ -26,14 +27,32 @@ class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
+  // Widget build(BuildContext context) {
+  //   return Scaffold(
+  //     backgroundColor: Colors.black,
+  //     body: Splasher.withImage(
+  //       logo: const AssetImage('assets/images/logo.png'),
+  //       logoWidth: 200,
+  //       backgroundColor: Colors.black,
+  //       loadingText: const Text('Loading...'),
+  //       navigator: const HomeScreen(),
+  //       durationInSeconds: 10000,
+  //     ),
+  //   );
+  // }
+
   Widget build(BuildContext context) {
-    return const Splasher(
-      logo: 'assets/animations/logo.json',
-      backgroundColor: Colors.white,
-      loadingText: Text('Loading...'),
-      durationInSeconds: 3,
-      navigator: HomeScreen(),
-    );
+    return Scaffold(
+        backgroundColor: Colors.black,
+        body: Splasher.withLottie(
+          logo: 'assets/animations/logo.json',
+          logoWidth: 200,
+          title: const Text('Splasher'),
+          backgroundColor: Colors.black,
+          loadingText: const Text('Loading...'),
+          navigator: const HomeScreen(),
+          durationInSeconds: 3,
+        ));
   }
 }
 
