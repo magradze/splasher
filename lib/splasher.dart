@@ -1,5 +1,4 @@
 library splasher;
-
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:async';
 
@@ -65,6 +64,66 @@ class Splasher extends StatefulWidget {
     this.showLoader = true,
   });
 
+  factory Splasher.withLottie({
+    required String logo,
+    double logoWidth = 50,
+    Color loaderColor = Colors.black,
+    Text? title,
+    Color backgroundColor = Colors.white,
+    Text loadingText = const Text(''),
+    EdgeInsets loadingTextPadding = const EdgeInsets.only(top: 10.0),
+    Gradient? gradientBackground,
+    bool showLoader = true,
+    int durationInSeconds = 3,
+    dynamic navigator,
+    Future<Object>? futureNavigator,
+  }) =>
+      Splasher(
+        logo: logo,
+        logoWidth: logoWidth,
+        loaderColor: loaderColor,
+        title: title,
+        backgroundColor: backgroundColor,
+        loadingText: loadingText,
+        loadingTextPadding: loadingTextPadding,
+        gradientBackground: gradientBackground,
+        showLoader: showLoader,
+        durationInSeconds: durationInSeconds,
+        navigator: navigator,
+        futureNavigator: futureNavigator,
+      );
+
+  factory Splasher.withImage({
+    required AssetImage logo,
+    ImageProvider? backgroundImage,
+    double logoWidth = 50,
+    Color loaderColor = Colors.black,
+    Color backgroundColor = Colors.white,
+    Text? title,
+    Text loadingText = const Text(''),
+    EdgeInsets loadingTextPadding = const EdgeInsets.only(top: 10.0),
+    Gradient? gradientBackground,
+    bool showLoader = true,
+    int durationInSeconds = 3,
+    dynamic navigator,
+    Future<Object>? futureNavigator,
+  }) =>
+      Splasher(
+        logo: logo.assetName,
+        logoWidth: logoWidth,
+        loaderColor: loaderColor,
+        title: title,
+        backgroundColor: backgroundColor,
+        loadingText: loadingText,
+        loadingTextPadding: loadingTextPadding,
+        backgroundImage: backgroundImage,
+        gradientBackground: gradientBackground,
+        showLoader: showLoader,
+        durationInSeconds: durationInSeconds,
+        navigator: navigator,
+        futureNavigator: futureNavigator,
+      );
+
   @override
   State<Splasher> createState() => _SplasherState();
 }
@@ -96,6 +155,24 @@ class _SplasherState extends State<Splasher> {
     }
   }
 
+  _renderer() {
+    if (widget.logo.contains('.json')) {
+      return Lottie.asset(
+        widget.logo,
+        width: widget.logoWidth,
+        height: widget.logoWidth,
+        fit: BoxFit.cover,
+      );
+    } else {
+      return Image.asset(
+        widget.logo,
+        width: widget.logoWidth,
+        height: widget.logoWidth,
+        fit: BoxFit.cover,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -118,12 +195,7 @@ class _SplasherState extends State<Splasher> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Lottie.asset(
-                  widget.logo,
-                  width: widget.logoWidth,
-                  height: widget.logoWidth,
-                  fit: BoxFit.cover,
-                ),
+                _renderer(),
                 if (widget.title != null) widget.title!,
                 if (widget.showLoader) ...[
                   const SizedBox(height: 20),
