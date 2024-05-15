@@ -77,3 +77,4 @@ To use the **Splasher** widget:
 4. Place the **Splasher** widget at the root of your app or wherever appropriate.
 
 5. Run your application, and the splash screen will be displayed according to your configurations before navigating to the main content.
+
