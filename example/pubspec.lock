@@ -196,10 +196,10 @@ packages:
     dependency: "direct main"
     description:
       name: splasher
-      sha256: "08624d47848fa5bda0a78d323c6ce0979c748855ffa7c812c51699cdb1f172a1"
+      sha256: f8ccb89c5015e00f4b03517395f3f593df0a707a38498e057cccff6089c3020b
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.4"
+    version: "0.0.9"
   stack_trace:
     dependency: transitive
     description:
