@@ -1,6 +1,6 @@
 name: splasher
 description: "The Splasher widget in Flutter is designed to create a splash screen for your application."
-version: 0.1.0
+version: 0.1.1
 homepage: 'https://magradze.dev'
 repository: 'https://github.com/magradze/splasher'
 
