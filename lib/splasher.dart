@@ -169,14 +169,14 @@ class _SplasherState extends State<Splasher> {
       return Lottie.asset(
         widget.logo,
         width: widget.logoWidth,
-        height: widget.logoWidth,
+        height: widget.logoHeight ?? widget.logoWidth,
         fit: BoxFit.cover,
       );
     } else {
       return Image.asset(
         widget.logo,
         width: widget.logoWidth,
-        height: widget.logoWidth,
+        height: widget.logoHeight ?? widget.logoWidth,
         fit: BoxFit.cover,
       );
     }
