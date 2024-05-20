@@ -19,6 +19,9 @@ class Splasher extends StatefulWidget {
   /// logo width as in radius
   final double logoWidth;
 
+  /// logo height as in radius
+  final double? logoHeight;
+
   /// lottie file for logo
   final String logo;
 
@@ -56,6 +59,7 @@ class Splasher extends StatefulWidget {
     this.durationInSeconds = 3,
     required this.logo,
     this.logoWidth = 50,
+    this.logoHeight,
     this.title,
     this.backgroundColor = Colors.white,
     this.loadingText = const Text(''),
@@ -68,6 +72,7 @@ class Splasher extends StatefulWidget {
   factory Splasher.withLottie({
     required String logo,
     double logoWidth = 50,
+    double? logoHeight,
     Color loaderColor = Colors.black,
     Text? title,
     Color backgroundColor = Colors.white,
@@ -82,6 +87,7 @@ class Splasher extends StatefulWidget {
       Splasher(
         logo: logo,
         logoWidth: logoWidth,
+        logoHeight: logoHeight ?? logoWidth,
         loaderColor: loaderColor,
         title: title,
         backgroundColor: backgroundColor,
@@ -98,6 +104,7 @@ class Splasher extends StatefulWidget {
     required AssetImage logo,
     ImageProvider? backgroundImage,
     double logoWidth = 50,
+    double? logoHeight,
     Color loaderColor = Colors.black,
     Color backgroundColor = Colors.white,
     Text? title,
@@ -112,6 +119,7 @@ class Splasher extends StatefulWidget {
       Splasher(
         logo: logo.assetName,
         logoWidth: logoWidth,
+        logoHeight: logoHeight ?? logoWidth,
         loaderColor: loaderColor,
         title: title,
         backgroundColor: backgroundColor,
